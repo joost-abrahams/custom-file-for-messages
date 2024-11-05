@@ -43,3 +43,8 @@ function custom_file_for_messages_require() {
 	require( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'includes/functions.php' );
 }
 add_action( 'bp_include', 'custom_file_for_messages_require' );
+
+//declare complianz with consent level API
+$plugin = plugin_basename( __FILE__ );
+add_filter( "wp_consent_api_registered_{$plugin}", '__return_true' );
+
